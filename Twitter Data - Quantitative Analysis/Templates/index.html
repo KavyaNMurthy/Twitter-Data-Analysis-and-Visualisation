@@ -1,0 +1,106 @@
+<html>
+  <head>
+    <style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+  margin: 1;
+}
+
+/* Style the header */
+.header {
+    color: #000080;
+    border-radius: 25px;
+    border: 2px solid #000080;
+    background-color: #DCDCDC;
+    font-family: Comic sans MS;
+    padding: 1px;
+    text-align: center;
+}
+.p{
+    font-style: italic;
+   }
+/* Style the top navigation bar */
+.topnav {
+    border-radius: 15px;
+    border: 2px solid #ffffff;
+    overflow: hidden;
+    background-color: #000080;
+}
+
+/* Style the topnav links */
+.topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+.a{
+  color : red;
+  font-family: cursive;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+
+    float: left;
+    width: 50%;
+    padding: 15px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width:600px) {
+    .column {
+        width: 100%;
+    }
+}
+</style>
+    {% block graphs %} {% endblock %}
+
+  </head>
+
+  <body>
+    <div class="header">
+  <h1 font-family = "Comic Sans MS">TWITTER DATA ANALYTICS</h1>
+</div>
+
+<div class="topnav">
+  <a href="/">Languages</a>
+  <a href="/Map"> Plot Map </a>
+  <a href="top_tweets">Top Tweets</a>
+  <a href="trends"> Trends </a>
+</div>
+<div class = "a">
+<marquee>Analyse trends and patterns in Twitter data</marquee></div>
+<div class="row">
+  <div class="column">
+      {% block div1 %}  {% endblock %}
+  </div>
+  <div class="column">
+      {% block div2 %}  {% endblock %}
+  </div>
+</div>
+<div class="row">
+  <div class="column">
+    {% block tweets %}  {% endblock %}
+</div>
+</div>
+</body>
+</html>
